@@ -10,7 +10,7 @@ const request = require('request');
 describe('Archana Kitchen', function () {
     beforeEach(function (done) {
         this.timeout(3000); 
-        setTimeout(done, 2500);
+        setTimeout(done, 3000);
     });
     it('length check', function () {
         var x = "";
@@ -39,6 +39,10 @@ describe('Archana Kitchen', function () {
 
 
 describe('Recipe Timesofindia', function () {
+    beforeEach(function (done) {
+        this.timeout(3000); 
+        setTimeout(done, 3000);
+    });
     it('length check', function () {
         var x = "";
         var t = [];
@@ -65,6 +69,10 @@ describe('Recipe Timesofindia', function () {
 });
 
 describe('Sanjeev Kapoor', function () {
+    beforeEach(function (done) {
+        this.timeout(3000); 
+        setTimeout(done, 3000);
+    });
     it('length check', function () {
         var x = "";
         var t = [];
