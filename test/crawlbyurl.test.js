@@ -8,6 +8,10 @@ const request = require('request');
 
 
 describe('Archana Kitchen', function () {
+    beforeEach(function (done) {
+        this.timeout(3000); 
+        setTimeout(done, 2500);
+    });
     it('length check', function () {
         var x = "";
         var t = [];
@@ -21,7 +25,7 @@ describe('Archana Kitchen', function () {
         return crawl.crawlbyurl(craulurl.ARCHANA_KITCHEN).then((data) => {
             let ingredientText = data.ingredients[0].text;
             expect(ingredientText).to.equal('Ingredients');
-           })
+        })
 
     })
     it('method tag check', function () {
@@ -48,7 +52,7 @@ describe('Recipe Timesofindia', function () {
         return crawl.crawlbyurl(craulurl.TIMESOFINDIA).then((data) => {
             let ingredientText = data.ingredients[0].text;
             expect(ingredientText).to.equal('Ingredients of Ice Cream Cake with Oreo Cookies');
-           })
+        })
 
     })
     it('method tag check', function () {
@@ -73,8 +77,8 @@ describe('Sanjeev Kapoor', function () {
     it('ingredient tag check', function () {
         return crawl.crawlbyurl(craulurl.SANJEEV_KAPOOR).then((data) => {
             let ingredientText = data.ingredients[0].text;
-            expect(ingredientText).to.equal('Ingredients for Eggless Mawa Elaichi Doughnuts Recipe');           
-           })
+            expect(ingredientText).to.equal('Ingredients for Eggless Mawa Elaichi Doughnuts Recipe');
+        })
 
     })
     it('method tag check', function () {
