@@ -8,9 +8,9 @@ module.exports = {
         return new Promise(function(resolve, reject) {
             request(crawl_url, function(err, res, body) {
                 var $ = cheerio.load(body);
-                let tags = ['a', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'i', 'b', 'u', 'span', 'strong', 'td', 'li', 'center'];
+                let tags = ['a', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'i', 'b', 'u', 'span', 'strong', 'td', 'li', 'center','div'];
                 let ingredientkeywords = ['ingredients used', 'ingredients for', 'ingredients in', 'ingredients of', 'ingredients to', 'ingredients'];
-                let methodkeywords = ['directions','directions for','methods','how to'];
+                let methodkeywords = ['directions','directions for','method','how to'];
                 ingredientTags = Xpath.getElementByXpath(body, tags, ingredientkeywords);
                 methodTags = Xpath.getElementByXpath(body, tags, methodkeywords);
     
