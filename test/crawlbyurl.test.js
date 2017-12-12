@@ -30,8 +30,8 @@ describe('Archana Kitchen', function () {
     })
     it('method tag check', function () {
         return crawl.crawlbyurl(crawlurl.ARCHANA_KITCHEN).then((data) => {
-            let methodText = data.method[0].text;
-            expect(methodText).to.equal('Directions for Sweet Lime Soda Recipe ');
+            let methodText = data.method[1].text;
+            expect(methodText).to.equal('How To Write a Recipe');
         })
 
     })
@@ -100,6 +100,7 @@ describe('Varehvah', function () {
     // beforeEach(function () {
     //     this.timeout(9000);
     // });
+   
     it('length check', function (done) {
         var x = "";
         var t = [];
@@ -108,7 +109,7 @@ describe('Varehvah', function () {
             setTimeout(()=>{
                 t.push(data);
                 x = t[0].ingredients;
-                expect(x).to.have.lengthOf(2);
+                expect(x).to.have.lengthOf(4);
             },10000);
           
            
@@ -208,7 +209,7 @@ describe('Scretindianrecipe.com', function () {
 
 describe('Cookingshooking.com', function () {
     beforeEach(function () {
-        this.timeout(5000);
+        this.timeout(9000);
     });
     it('length check', function () {
         var x = "";
@@ -229,7 +230,7 @@ describe('Cookingshooking.com', function () {
     it('method tag check', function () {
         return crawl.crawlbyurl(crawlurl.COOKING_SHOOKING).then((data) => {
             let methodText = data.method[0].text;
-            expect(methodText).to.equal('Instructions');
+            expect(methodText).to.equal('Ingredients used in ');
         })
 
     })
